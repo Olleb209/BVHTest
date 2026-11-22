@@ -1,0 +1,35 @@
+
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "build-main-standard",
+			"type": "process",
+			"command": "C:/mingw64/bin/gcc.exe",
+			"args": [
+				"-g",
+				"-march=native",
+				"-O3",
+				"-ffast-math",
+				"-Wall",
+				"main.c",
+//                "${workspaceFolder}/src/*.c",
+//                "${workspaceFolder}/CCMath/src/*.c",
+                "-I${workspaceFolder}/include",
+                "-I${workspaceFolder}/CCMath/include",
+				"-o",
+				"${workspaceFolder}/build/main.exe"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}
