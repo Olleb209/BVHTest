@@ -8,7 +8,7 @@
             "program": "${workspaceFolder}/build/main.exe",
             "cwd": "${workspaceFolder}",
             "externalConsole": false,
-            "MIMode": "gdb",
+//            "MIMode": "gdb",
             "miDebuggerPath": "C:/mingw64/bin/gdb.exe",
             "preLaunchTask": "build-main-standard"
         }

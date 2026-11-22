@@ -5,7 +5,7 @@
 		{
 			"label": "build-main-standard",
 			"type": "process",
-			"command": "C:/mingw64/bin/gcc.exe",
+			"command": "gcc",
 			"args": [
 				"-g",
 				"-march=native",
@@ -15,7 +15,7 @@
 				"main.c",
 //                "${workspaceFolder}/src/*.c",
 //                "${workspaceFolder}/CCMath/src/*.c",
-                "-I${workspaceFolder}/include",
+//                "-I${workspaceFolder}/include",
                 "-I${workspaceFolder}/CCMath/include",
 				"-o",
 				"${workspaceFolder}/build/main.exe"
