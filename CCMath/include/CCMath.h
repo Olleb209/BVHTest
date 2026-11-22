@@ -8,12 +8,6 @@
 // Compiler attributes
 // ==========================================================
 
-#if defined(__GNUC__) && !defined(__clang__)
-	#define CCMATH_OPTIMIZE __attribute__((optimize("O3")))
-#else
-	#define CCMATH_OPTIMIZE
-#endif
-
 #define CCMATH_INLINE static inline
 
 // ==========================================================
@@ -83,29 +77,29 @@ typedef union ccmath_vec2f64 {
 // ----------------------------------------------------------
 
 // Computes -v
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f32 ccmath_vec4f32_neg(ccmath_vec4f32 v);
 
 // Computes abs(v)
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f32 ccmath_vec4f32_abs(ccmath_vec4f32 v);
 
 // Computes the minimum of each component
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f32 ccmath_vec4f32_min(
 	ccmath_vec4f32 v1,
 	ccmath_vec4f32 v2
 );
 
 // Computes the maximum of each component
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f32 ccmath_vec4f32_max(
 	ccmath_vec4f32 v1,
 	ccmath_vec4f32 v2
 );
 
 // Clamps all components between two floats
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f32 ccmath_vec4f32_clampf(
 	ccmath_vec4f32 v,
 	float min,
@@ -113,7 +107,7 @@ ccmath_vec4f32 ccmath_vec4f32_clampf(
 );
 
 // Clamps all components between two vectors
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f32 ccmath_vec4f32_clampv(
 	ccmath_vec4f32 v,
 	ccmath_vec4f32 min,
@@ -121,7 +115,7 @@ ccmath_vec4f32 ccmath_vec4f32_clampv(
 );
 
 // Interpolates between v1 and v2 with scalar t
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f32 ccmath_vec4f32_lerp(
 	ccmath_vec4f32 v1,
 	ccmath_vec4f32 v2,
@@ -129,7 +123,7 @@ ccmath_vec4f32 ccmath_vec4f32_lerp(
 );
 
 // Interpolates between v1 and v2 with scalar t clamped between 1 and 0
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f32 ccmath_vec4f32_lerp_clamped(
 	ccmath_vec4f32 v1,
 	ccmath_vec4f32 v2,
@@ -137,7 +131,7 @@ ccmath_vec4f32 ccmath_vec4f32_lerp_clamped(
 );
 
 // Interpolates between v1 and v2 with component-wise t
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f32 ccmath_vec4f32_lerpv(
 	ccmath_vec4f32 v1,
 	ccmath_vec4f32 v2,
@@ -145,82 +139,82 @@ ccmath_vec4f32 ccmath_vec4f32_lerpv(
 );
 
 // Computes v1 + v2
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f32 ccmath_vec4f32_add(
 	ccmath_vec4f32 v1,
 	ccmath_vec4f32 v2
 );
 
 // Computes v1 - v2
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f32 ccmath_vec4f32_sub(
 	ccmath_vec4f32 v1,
 	ccmath_vec4f32 v2
 );
 
 // Computes v1 * v2 component-wise
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f32 ccmath_vec4f32_mul(
 	ccmath_vec4f32 v1,
 	ccmath_vec4f32 v2
 );
 
 // Multiplies every component by a scalar
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f32 ccmath_vec4f32_scale(
 	ccmath_vec4f32 v,
 	float s
 );
 
 // Computes v1 / v2 component-wise
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f32 ccmath_vec4f32_div(
 	ccmath_vec4f32 v1,
 	ccmath_vec4f32 v2
 );
 
 // Computes the dot product of the given vectors
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 float ccmath_vec4f32_dot(
 	ccmath_vec4f32 v1,
 	ccmath_vec4f32 v2
 );
 
 // Computes the squared length of the given vector
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 float ccmath_vec4f32_length_squared(
 	ccmath_vec4f32 v
 );
 
 // Computes the squared distance between the given vectors
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 float ccmath_vec4f32_distance_squared(
 	ccmath_vec4f32 v1,
 	ccmath_vec4f32 v2
 );
 
 // Computes the length of the given vector
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 float ccmath_vec4f32_length(
 	ccmath_vec4f32 v
 );
 
 // Computes the distance between the given vectors
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 float ccmath_vec4f32_distance(
 	ccmath_vec4f32 v1,
 	ccmath_vec4f32 v2
 );
 
 // Makes the given vector have length 1
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f32 ccmath_vec4f32_normalize(
 	ccmath_vec4f32 v
 );
 
 // Makes the given vector have length 1
 // Makes it so that if vector is length 0 it stays length 0
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f32 ccmath_vec4f32_normalize_safe(
 	ccmath_vec4f32 v
 );
@@ -230,29 +224,29 @@ ccmath_vec4f32 ccmath_vec4f32_normalize_safe(
 // ----------------------------------------------------------
 
 // Computes -v
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f64 ccmath_vec4f64_neg(ccmath_vec4f64 v);
 
 // Computes abs(v)
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f64 ccmath_vec4f64_abs(ccmath_vec4f64 v);
 
 // Computes the minimum of each component
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f64 ccmath_vec4f64_min(
 	ccmath_vec4f64 v1,
 	ccmath_vec4f64 v2
 );
 
 // Computes the maximum of each component
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f64 ccmath_vec4f64_max(
 	ccmath_vec4f64 v1,
 	ccmath_vec4f64 v2
 );
 
 // Clamps all components between two floats
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f64 ccmath_vec4f64_clamp(
 	ccmath_vec4f64 v,
 	double min,
@@ -260,7 +254,7 @@ ccmath_vec4f64 ccmath_vec4f64_clamp(
 );
 
 // Clamps all components between two vectors
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f64 ccmath_vec4f64_clampv(
 	ccmath_vec4f64 v,
 	ccmath_vec4f64 min,
@@ -268,7 +262,7 @@ ccmath_vec4f64 ccmath_vec4f64_clampv(
 );
 
 // Interpolates between v1 and v2 with scalar t
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f64 ccmath_vec4f64_lerp(
 	ccmath_vec4f64 v1,
 	ccmath_vec4f64 v2,
@@ -276,7 +270,7 @@ ccmath_vec4f64 ccmath_vec4f64_lerp(
 );
 
 // Interpolates between v1 and v2 with t clamped between 0 and 1
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f64 ccmath_vec4f64_lerp_clamped(
 	ccmath_vec4f64 v1,
 	ccmath_vec4f64 v2,
@@ -284,7 +278,7 @@ ccmath_vec4f64 ccmath_vec4f64_lerp_clamped(
 );
 
 // Interpolates between v1 and v2 with component-wise t
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f64 ccmath_vec4f64_lerpv(
 	ccmath_vec4f64 v1,
 	ccmath_vec4f64 v2,
@@ -292,82 +286,82 @@ ccmath_vec4f64 ccmath_vec4f64_lerpv(
 );
 
 // Computes v1 + v2
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f64 ccmath_vec4f64_add(
 	ccmath_vec4f64 v1,
 	ccmath_vec4f64 v2
 );
 
 // Computes v1 - v2
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f64 ccmath_vec4f64_sub(
 	ccmath_vec4f64 v1,
 	ccmath_vec4f64 v2
 );
 
 // Computes v1 * v2 component-wise
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f64 ccmath_vec4f64_mul(
 	ccmath_vec4f64 v1,
 	ccmath_vec4f64 v2
 );
 
 // Multiplies every component by a scalar
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f64 ccmath_vec4f64_scale(
 	ccmath_vec4f64 v,
 	double s
 );
 
 // Computes v1 / v2 component-wise
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f64 ccmath_vec4f64_div(
 	ccmath_vec4f64 v1,
 	ccmath_vec4f64 v2
 );
 
 // Computes the dot product of the given vectors
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 double ccmath_vec4f64_dot(
 	ccmath_vec4f64 v1,
 	ccmath_vec4f64 v2
 );
 
 // Computes the squared length of the given vector
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 double ccmath_vec4f64_length_squared(
 	ccmath_vec4f64 v
 );
 
 // Computes the squared distance between the given vectors
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 double ccmath_vec4f64_distance_squared(
 	ccmath_vec4f64 v1,
 	ccmath_vec4f64 v2
 );
 
 // Computes the length of the given vector
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 double ccmath_vec4f64_length(
 	ccmath_vec4f64 v
 );
 
 // Computes the distance between the given vectors
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 double ccmath_vec4f64_distance(
 	ccmath_vec4f64 v1,
 	ccmath_vec4f64 v2
 );
 
 // Makes the given vector have length 1
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f64 ccmath_vec4f64_normalize(
 	ccmath_vec4f64 v
 );
 
 // Makes the given vector have length 1
 // Makes it so that if vector is length 0 it stays length 0
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f64 ccmath_vec4f64_normalize_safe(
 	ccmath_vec4f64 v
 );
@@ -381,7 +375,7 @@ ccmath_vec4f64 ccmath_vec4f64_normalize_safe(
 // ----------------------------------------------------------
 
 // Computes -v
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f32 ccmath_vec4f32_neg(ccmath_vec4f32 v) {
 	return (ccmath_vec4f32){{
 		-v.x, -v.y, -v.z, -v.w
@@ -389,7 +383,7 @@ ccmath_vec4f32 ccmath_vec4f32_neg(ccmath_vec4f32 v) {
 }
 
 // Computes abs(v)
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f32 ccmath_vec4f32_abs(ccmath_vec4f32 v) {
 	return (ccmath_vec4f32){{
 		fabsf(v.x), fabsf(v.y), fabsf(v.z), fabsf(v.w)
@@ -397,7 +391,7 @@ ccmath_vec4f32 ccmath_vec4f32_abs(ccmath_vec4f32 v) {
 }
 
 // Computes the minimum of each component
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f32 ccmath_vec4f32_min(
 	ccmath_vec4f32 v1,
 	ccmath_vec4f32 v2
@@ -411,7 +405,7 @@ ccmath_vec4f32 ccmath_vec4f32_min(
 }
 
 // Computes the maximum of each component
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f32 ccmath_vec4f32_max(
 	ccmath_vec4f32 v1,
 	ccmath_vec4f32 v2
@@ -425,7 +419,7 @@ ccmath_vec4f32 ccmath_vec4f32_max(
 }
 
 // Clamps all components between two floats
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f32 ccmath_vec4f32_clampf(
 	ccmath_vec4f32 v,
 	float min,
@@ -440,7 +434,7 @@ ccmath_vec4f32 ccmath_vec4f32_clampf(
 }
 
 // Clamps all components between two vectors
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f32 ccmath_vec4f32_clampv(
 	ccmath_vec4f32 v,
 	ccmath_vec4f32 min,
@@ -455,7 +449,7 @@ ccmath_vec4f32 ccmath_vec4f32_clampv(
 }
 
 // Interpolates between v1 and v2 with scalar t
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f32 ccmath_vec4f32_lerp(
 	ccmath_vec4f32 v1,
 	ccmath_vec4f32 v2,
@@ -471,7 +465,7 @@ ccmath_vec4f32 ccmath_vec4f32_lerp(
 }
 
 // Interpolates between v1 and v2 with t clamped between 0 and 1
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f32 ccmath_vec4f32_lerp_clamped(
 	ccmath_vec4f32 v1,
 	ccmath_vec4f32 v2,
@@ -487,7 +481,7 @@ ccmath_vec4f32 ccmath_vec4f32_lerp_clamped(
 }
 
 // Interpolates between v1 and v2 with component-wise t
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f32 ccmath_vec4f32_lerpv(
 	ccmath_vec4f32 v1,
 	ccmath_vec4f32 v2,
@@ -503,7 +497,7 @@ ccmath_vec4f32 ccmath_vec4f32_lerpv(
 }
 
 // Computes v1 + v2
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f32 ccmath_vec4f32_add(
 	ccmath_vec4f32 v1,
 	ccmath_vec4f32 v2
@@ -517,7 +511,7 @@ ccmath_vec4f32 ccmath_vec4f32_add(
 }
 
 // Computes v1 - v2
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f32 ccmath_vec4f32_sub(
 	ccmath_vec4f32 v1,
 	ccmath_vec4f32 v2
@@ -531,7 +525,7 @@ ccmath_vec4f32 ccmath_vec4f32_sub(
 }
 
 // Computes v1 * v2 component-wise
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f32 ccmath_vec4f32_mul(
 	ccmath_vec4f32 v1,
 	ccmath_vec4f32 v2
@@ -545,7 +539,7 @@ ccmath_vec4f32 ccmath_vec4f32_mul(
 }
 
 // Multiplies every component by a scalar
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f32 ccmath_vec4f32_scale(
 	ccmath_vec4f32 v,
 	float s
@@ -559,7 +553,7 @@ ccmath_vec4f32 ccmath_vec4f32_scale(
 }
 
 // Computes v1 / v2 component-wise
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f32 ccmath_vec4f32_div(
 	ccmath_vec4f32 v1,
 	ccmath_vec4f32 v2
@@ -573,7 +567,7 @@ ccmath_vec4f32 ccmath_vec4f32_div(
 }
 
 // Computes the dot product of the given vectors
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 float ccmath_vec4f32_dot(
 	ccmath_vec4f32 v1,
 	ccmath_vec4f32 v2
@@ -585,7 +579,7 @@ float ccmath_vec4f32_dot(
 }
 
 // Computes the squared length of the given vector
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 float ccmath_vec4f32_length_squared(
 	ccmath_vec4f32 v
 ) {
@@ -593,7 +587,7 @@ float ccmath_vec4f32_length_squared(
 }
 
 // Computes the squared distance between the given vectors
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 float ccmath_vec4f32_distance_squared(
 	ccmath_vec4f32 v1,
 	ccmath_vec4f32 v2
@@ -602,7 +596,7 @@ float ccmath_vec4f32_distance_squared(
 }
 
 // Computes the length of the given vector
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 float ccmath_vec4f32_length(
 	ccmath_vec4f32 v
 ) {
@@ -610,7 +604,7 @@ float ccmath_vec4f32_length(
 }
 
 // Computes the distance between the given vectors
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 float ccmath_vec4f32_distance(
 	ccmath_vec4f32 v1,
 	ccmath_vec4f32 v2
@@ -619,7 +613,7 @@ float ccmath_vec4f32_distance(
 }
 
 // Makes the given vector have length 1
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f32 ccmath_vec4f32_normalize(
 	ccmath_vec4f32 v
 ) {
@@ -630,7 +624,7 @@ ccmath_vec4f32 ccmath_vec4f32_normalize(
 
 // Makes the given vector have length 1
 // Makes it so that if vector is length 0 it stays length 0
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f32 ccmath_vec4f32_normalize_safe(
 	ccmath_vec4f32 v
 ) {
@@ -650,7 +644,7 @@ ccmath_vec4f32 ccmath_vec4f32_normalize_safe(
 // ----------------------------------------------------------
 
 // Computes -v 
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f64 ccmath_vec4f64_neg(ccmath_vec4f64 v) {
 	return (ccmath_vec4f64){{
 		-v.x, -v.y, -v.z, -v.w
@@ -658,7 +652,7 @@ ccmath_vec4f64 ccmath_vec4f64_neg(ccmath_vec4f64 v) {
 }
 
 // Computes abs(v)
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f64 ccmath_vec4f64_abs(ccmath_vec4f64 v) {
 	return (ccmath_vec4f64){{
 		fabs(v.x), fabs(v.y), fabs(v.z), fabs(v.w)
@@ -666,7 +660,7 @@ ccmath_vec4f64 ccmath_vec4f64_abs(ccmath_vec4f64 v) {
 }
 
 // Computes the minimum of each component
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f64 ccmath_vec4f64_min(
 	ccmath_vec4f64 v1,
 	ccmath_vec4f64 v2
@@ -680,7 +674,7 @@ ccmath_vec4f64 ccmath_vec4f64_min(
 }
 
 // Computes the maximum of each component
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f64 ccmath_vec4f64_max(
 	ccmath_vec4f64 v1,
 	ccmath_vec4f64 v2
@@ -694,7 +688,7 @@ ccmath_vec4f64 ccmath_vec4f64_max(
 }
 
 // Clamps all components between two doubles
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f64 ccmath_vec4f64_clamp(
 	ccmath_vec4f64 v,
 	double min,
@@ -709,7 +703,7 @@ ccmath_vec4f64 ccmath_vec4f64_clamp(
 }
 
 // Clamps all components between two vectors
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f64 ccmath_vec4f64_clampv(
 	ccmath_vec4f64 v,
 	ccmath_vec4f64 min,
@@ -724,7 +718,7 @@ ccmath_vec4f64 ccmath_vec4f64_clampv(
 }
 
 // Interpolates between v1 and v2 with scalar t
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f64 ccmath_vec4f64_lerp(
 	ccmath_vec4f64 v1,
 	ccmath_vec4f64 v2,
@@ -740,7 +734,7 @@ ccmath_vec4f64 ccmath_vec4f64_lerp(
 }
 
 // Interpolates between v1 and v2 with t clamped between 0 and 1
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f64 ccmath_vec4f64_lerp_clamped(
 	ccmath_vec4f64 v1,
 	ccmath_vec4f64 v2,
@@ -756,7 +750,7 @@ ccmath_vec4f64 ccmath_vec4f64_lerp_clamped(
 }
 
 // Interpolates between v1 and v2 with component-wise t
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f64 ccmath_vec4f64_lerpv(
 	ccmath_vec4f64 v1,
 	ccmath_vec4f64 v2,
@@ -772,7 +766,7 @@ ccmath_vec4f64 ccmath_vec4f64_lerpv(
 }
 
 // Computes v1 + v2
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f64 ccmath_vec4f64_add(
 	ccmath_vec4f64 v1,
 	ccmath_vec4f64 v2
@@ -786,7 +780,7 @@ ccmath_vec4f64 ccmath_vec4f64_add(
 }
 
 // Computes v1 - v2
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f64 ccmath_vec4f64_sub(
 	ccmath_vec4f64 v1,
 	ccmath_vec4f64 v2
@@ -800,7 +794,7 @@ ccmath_vec4f64 ccmath_vec4f64_sub(
 }
 
 // Computes v1 * v2 component-wise
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f64 ccmath_vec4f64_mul(
 	ccmath_vec4f64 v1,
 	ccmath_vec4f64 v2
@@ -814,7 +808,7 @@ ccmath_vec4f64 ccmath_vec4f64_mul(
 }
 
 // Multiplies every component by a scalar
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f64 ccmath_vec4f64_scale(
 	ccmath_vec4f64 v,
 	double s
@@ -828,7 +822,7 @@ ccmath_vec4f64 ccmath_vec4f64_scale(
 }
 
 // Computes v1 / v2 component-wise
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f64 ccmath_vec4f64_div(
 	ccmath_vec4f64 v1,
 	ccmath_vec4f64 v2
@@ -842,7 +836,7 @@ ccmath_vec4f64 ccmath_vec4f64_div(
 }
 
 // Computes the dot product of the given vectors
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 double ccmath_vec4f64_dot(
 	ccmath_vec4f64 v1,
 	ccmath_vec4f64 v2
@@ -854,7 +848,7 @@ double ccmath_vec4f64_dot(
 }
 
 // Computes the squared length of the given vector
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 double ccmath_vec4f64_length_squared(
 	ccmath_vec4f64 v
 ) {
@@ -862,7 +856,7 @@ double ccmath_vec4f64_length_squared(
 }
 
 // Computes the squared distance between the given vectors
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 double ccmath_vec4f64_distance_squared(
 	ccmath_vec4f64 v1,
 	ccmath_vec4f64 v2
@@ -871,7 +865,7 @@ double ccmath_vec4f64_distance_squared(
 }
 
 // Computes the length of the given vector
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 double ccmath_vec4f64_length(
 	ccmath_vec4f64 v
 ) {
@@ -879,7 +873,7 @@ double ccmath_vec4f64_length(
 }
 
 // Computes the distance between the given vectors
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 double ccmath_vec4f64_distance(
 	ccmath_vec4f64 v1,
 	ccmath_vec4f64 v2
@@ -888,7 +882,7 @@ double ccmath_vec4f64_distance(
 }
 
 // Makes the given vector have length 1
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f64 ccmath_vec4f64_normalize(
 	ccmath_vec4f64 v
 ) {
@@ -899,7 +893,7 @@ ccmath_vec4f64 ccmath_vec4f64_normalize(
 
 // Makes the given vector have length 1
 // Makes it so that if vector is length 0 it stays length 0
-CCMATH_INLINE CCMATH_OPTIMIZE
+CCMATH_INLINE 
 ccmath_vec4f64 ccmath_vec4f64_normalize_safe(
 	ccmath_vec4f64 v
 ) {
