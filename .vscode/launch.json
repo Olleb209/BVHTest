@@ -9,7 +9,7 @@
             "cwd": "${workspaceFolder}",
             "externalConsole": false,
 //            "MIMode": "gdb",
-            "miDebuggerPath": "C:/mingw64/bin/gdb.exe",
+//            "miDebuggerPath": "C:/mingw64/bin/gdb.exe",
             "preLaunchTask": "build-main-standard"
         }
     ]
